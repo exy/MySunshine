@@ -2,9 +2,7 @@ package exy.com.mysunshine.app;
 
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
 import org.json.JSONException;
 
@@ -18,23 +16,9 @@ import java.net.URL;
 /**
  * Created by eXy on 10/12/2014.
  */
-public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
+public class FetchWeatherTask2 extends AsyncTask<String, Void, String[]> {
 
-    private final String LOG_TAG = FetchWeatherTask.class.getSimpleName();
-
-    public ArrayAdapter<String> mForecastAdapter;
-
-    public FetchWeatherTask(FragmentActivity fragmentActivity) {
-
-        mForecastAdapter = new ArrayAdapter<String>(
-                // The current context
-                fragmentActivity,
-                // ID of list item layout
-                R.layout.list_item_forecast,
-                // ID of the textview to populate
-                R.id.list_item_forecast_textview
-        );
-    }
+    private final String LOG_TAG = FetchWeatherTask2.class.getSimpleName();
 
     @Override
     protected String[] doInBackground(String... params) {
@@ -137,9 +121,9 @@ public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
     @Override
     protected void onPostExecute(String[] result) {
         if (result != null) {
-            mForecastAdapter.clear();
+            //mForecastAdapter.clear();
             for (String dayForecastStr : result) {
-                mForecastAdapter.add(dayForecastStr);
+                //mForecastAdapter.add(dayForecastStr);
             }
             // New data is back from the server. Hooray !
         }

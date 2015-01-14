@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="exy.com.mysunshine.app" >
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -17,6 +18,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="exy.com.mysunshine.app.MainActivity" />
+        </activity>
+        <activity
+            android:name="exy.com.mysunshine.app.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="exy.com.mysunshine.app.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
